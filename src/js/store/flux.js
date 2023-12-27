@@ -75,6 +75,9 @@ const getState = ({ getStore, setStore, getActions }) => {
 					.then(resp => {
 						console.log(resp.ok); // Será true (verdad) si la respuesta es exitosa.
 						console.log(resp.status); // el código de estado = 200 o código = 400 etc.
+						if (resp.ok === true) {
+							getActions().getAllAgenda();
+						}
 						return resp.json();
 					})
 					.then(data => console.log(data))

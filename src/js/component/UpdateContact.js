@@ -29,10 +29,12 @@ export const UpdateContact = props => {
 			full_name: full_name,
 			email: email,
 			phone: phone,
+			agenda_slug: "dani_mena",
 			address: address,
 			id: props.id
 		};
 		actions.updateContact(actualizaContacto);
+		props.onClose();
 	};
 
 	return (
